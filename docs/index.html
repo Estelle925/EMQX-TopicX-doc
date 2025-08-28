@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMQX-TopicX - EMQX Topic管理增强服务</title>
+    <meta name="description" content="专为EMQX设计的Topic管理增强服务，提供直观的Web界面来管理和监控MQTT Topic">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="logo.svg" alt="EMQX-TopicX" class="logo">
+                <span class="brand-text">EMQX-TopicX</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">功能特性</a>
+                <a href="#architecture" class="nav-link">技术架构</a>
+                <a href="#quickstart" class="nav-link">快速开始</a>
+                <a href="#demo" class="nav-link">在线演示</a>
+                <a href="https://github.com/Estelle925/EMQX-TopicX" class="nav-link github-link" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">EMQX-TopicX</span>
+                    <br>MQTT Topic管理增强服务
+                </h1>
+                <p class="hero-description">
+                    专为EMQX设计的Topic管理增强服务，提供直观的Web界面来管理和监控MQTT Topic。
+                    实现对海量Topic的规范化、可视化和精细化管理。
+                </p>
+                <div class="hero-buttons">
+                    <a href="#quickstart" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> 快速开始
+                    </a>
+                    <a href="#demo" class="btn btn-secondary">
+                        <i class="fas fa-play"></i> 在线演示
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">1.0.0</div>
+                        <div class="stat-label">最新版本</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">Docker</div>
+                        <div class="stat-label">容器化部署</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">Vue 3</div>
+                        <div class="stat-label">现代化前端</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://cdn.nlark.com/yuque/0/2025/png/661183/1756391231148-9610ae23-2bce-41c2-9ac3-a1e4aaacb49d.png" alt="EMQX-TopicX 产品界面" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="core-values">
+        <div class="container">
+            <h2 class="section-title">核心价值</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>全局视角，集中管理</h3>
+                    <p>统一控制面板管理所有EMQX集群的Topic信息，彻底改变过去需要通过命令行或零散查询的被动状态。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>业务赋能，精细治理</h3>
+                    <p>创新性地引入"业务分组"和"标签管理"功能，从业务逻辑维度对Topic进行归类、授权和审计。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>消息体规范与沉淀</h3>
+                    <p>支持为每个Topic配置Payload Schema，为开发人员提供明确的接口规范，减少通信歧义。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">功能特性</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>系统管理</h3>
+                    <ul>
+                        <li>多系统支持，管理多个EMQX实例</li>
+                        <li>实时状态监控和健康检查</li>
+                        <li>连接测试和响应时间监控</li>
+                        <li>安全认证和密码加密存储</li>
+                    </ul>
+                    <div class="feature-image">
+                        <img src="https://cdn.nlark.com/yuque/0/2025/png/661183/1756391207352-484296c4-5f1b-4a34-8d87-33951f896f26.png" alt="系统管理界面" loading="lazy">
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Topic管理</h3>
+                    <ul>
+                        <li>自动同步Topic信息，支持增量更新</li>
+                        <li>完整的CRUD操作和路径管理</li>
+                        <li>批量操作和高级搜索功能</li>
+                        <li>数据导出和可视化展示</li>
+                    </ul>
+                    <div class="feature-image">
+                        <img src="https://cdn.nlark.com/yuque/0/2025/png/661183/1756391231148-9610ae23-2bce-41c2-9ac3-a1e4aaacb49d.png" alt="Topic管理界面" loading="lazy">
+                        <img src="https://cdn.nlark.com/yuque/0/2025/png/661183/1756391277226-67076bd2-0510-4a7d-a88e-b87fd0fc9422.png" alt="Topic详情界面" loading="lazy">
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>标签系统</h3>
+                    <ul>
+                        <li>彩色标签进行可视化分类</li>
+                        <li>标签管理和使用统计</li>
+                        <li>批量标签操作</li>
+                        <li>删除保护机制</li>
+                    </ul>
+                    <div class="feature-image">
+                        <img src="https://cdn.nlark.com/yuque/0/2025/png/661183/1756391344556-461623d9-3caf-4edc-bd63-8f5019b053cc.png" alt="标签系统界面" loading="lazy">
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>业务分组</h3>
+                    <ul>
+                        <li>按业务逻辑对Topic进行分组</li>
+                        <li>分组统计和使用情况</li>
+                        <li>批量分组操作</li>
+                        <li>分组搜索和筛选</li>
+                    </ul>
+                    <div class="feature-image">
+                        <img src="https://cdn.nlark.com/yuque/0/2025/png/661183/1756391300959-5b9584de-efd9-4d26-ae90-f7c0e05583c5.png" alt="业务分组界面" loading="lazy">
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3>Payload模板</h3>
+                    <ul>
+                        <li>丰富的模板库，支持JSON、XML等格式</li>
+                        <li>模板分类和收藏功能</li>
+                        <li>使用统计和模板复制</li>
+                        <li>批量操作和管理</li>
+                    </ul>
+                    <div class="feature-image">
+                        <img src="https://cdn.nlark.com/yuque/0/2025/png/661183/1756391379886-e07ac2f5-948f-4d28-91d8-7619cd1e24ff.png" alt="Payload模板管理界面" loading="lazy">
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>数据统计</h3>
+                    <ul>
+                        <li>实时仪表板和系统概览</li>
+                        <li>业务统计和可视化图表</li>
+                        <li>状态刷新和数据同步</li>
+                        <li>多维度数据分析</li>
+                    </ul>
+                    <div class="feature-image">
+                        <img src="https://cdn.nlark.com/yuque/0/2025/png/661183/1756391397249-5eca7cc2-f5c7-44d1-9662-4de1fdeba259.png" alt="数据统计仪表板" loading="lazy">
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>用户管理</h3>
+                    <ul>
+                        <li>基于Sa-Token的用户认证系统</li>
+                        <li>安全用户认证和权限控制</li>
+                        <li>会话管理和自动登出</li>
+                        <li>角色权限管理</li>
+                    </ul>
+                    <div class="feature-image">
+                        <img src="https://cdn.nlark.com/yuque/0/2025/png/661183/1756391434733-16dcf05d-4a30-44ca-bd99-3b8787d0b411.png" alt="用户管理界面" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <h2 class="section-title">技术架构</h2>
+            <div class="arch-grid">
+                <div class="arch-section">
+                    <h3><i class="fas fa-cogs"></i> 后端技术栈</h3>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <span class="tech-name">Spring Boot</span>
+                            <span class="tech-version">3.2.0</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">MyBatis Plus</span>
+                            <span class="tech-version">3.5.5</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Sa-Token</span>
+                            <span class="tech-version">1.39.0</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">MySQL</span>
+                            <span class="tech-version">8.2.0</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Redis</span>
+                            <span class="tech-version">6.0+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="arch-section">
+                    <h3><i class="fas fa-desktop"></i> 前端技术栈</h3>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <span class="tech-name">Vue</span>
+                            <span class="tech-version">3</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">TypeScript</span>
+                            <span class="tech-version">Latest</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Element Plus</span>
+                            <span class="tech-version">2.10.7</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Vite</span>
+                            <span class="tech-version">5.0.12</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Tailwind CSS</span>
+                            <span class="tech-version">3.4.1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="arch-section">
+                    <h3><i class="fas fa-cloud"></i> 部署技术</h3>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <span class="tech-name">Docker</span>
+                            <span class="tech-version">20.10+</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">OpenJDK</span>
+                            <span class="tech-version">17</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">G1GC</span>
+                            <span class="tech-version">优化</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">GitHub Actions</span>
+                            <span class="tech-version">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section id="quickstart" class="quickstart">
+        <div class="container">
+            <h2 class="section-title">快速开始</h2>
+            <div class="quickstart-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="docker">Docker部署</button>
+                    <button class="tab-button" data-tab="local">本地开发</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="docker">
+                        <h3>使用Docker快速部署（推荐）</h3>
+                        <div class="code-block">
+                            <pre><code># 1. 克隆项目
+git clone https://github.com/Estelle925/EMQX-TopicX.git
+cd EMQX-TopicX
+
+# 2. 构建Docker镜像
+docker build -t emqx-topic-hub:1.0.0 .
+
+# 3. 运行容器
+docker run -d \
+  --name emqx-topic-hub \
+  -p 8080:8080 \
+  -v /host/logs:/app/logs \
+  -e SPRING_DATASOURCE_URL=jdbc:mysql://your-mysql-host:3306/emqx_topic_hub \
+  -e SPRING_DATASOURCE_USERNAME=Estelle925 \
+  -e SPRING_DATASOURCE_PASSWORD=your-password \
+  -e SPRING_DATA_REDIS_HOST=your-redis-host \
+  -e SPRING_DATA_REDIS_PASSWORD=your-redis-password \
+  emqx-topic-hub:1.0.0
+
+# 4. 访问应用
+# 打开浏览器访问: http://localhost:8080
+# 默认账号: admin / admin123</code></pre>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="local">
+                        <h3>本地开发部署</h3>
+                        <div class="code-block">
+                            <pre><code># 后端启动
+cd backend
+mvn spring-boot:run
+
+# 前端启动（新终端）
+cd frontend
+npm install
+npm run dev
+
+# 访问地址
+# 前端: http://localhost:3000
+# 后端: http://localhost:8080</code></pre>
+                        </div>
+                        <div class="requirements">
+                            <h4>环境要求</h4>
+                            <ul>
+                                <li>Java 17+</li>
+                                <li>Node.js 18+</li>
+                                <li>Maven 3.6+</li>
+                                <li>MySQL 8.0+</li>
+                                <li>Redis 6.0+</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EMQX-TopicX</h3>
+                    <p>专为EMQX设计的Topic管理增强服务</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Estelle925/EMQX-TopicX" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#features">功能特性</a></li>
+                        <li><a href="#architecture">技术架构</a></li>
+                        <li><a href="#quickstart">快速开始</a></li>
+                        <li><a href="#demo">产品演示</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>技术支持</h4>
+                    <ul>
+                        <li><a href="https://github.com/Estelle925/EMQX-TopicX/issues" target="_blank">问题反馈</a></li>
+                        <li><a href="https://github.com/Estelle925/EMQX-TopicX/wiki" target="_blank">文档中心</a></li>
+                        <li><a href="../README.md" target="_blank">项目README</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>版本信息</h4>
+                    <ul>
+                        <li>当前版本: v1.0.0</li>
+                        <li>发布日期: 2025年8月</li>
+                        <li><a href="../RELEASE_NOTES.md" target="_blank">发布说明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EMQX-TopicX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

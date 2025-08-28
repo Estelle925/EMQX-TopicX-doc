@@ -1,0 +1,83 @@
+# GitHub Pages Configuration for EMQX-TopicX
+
+# Site settings
+title: "EMQX-TopicX"
+description: "专为EMQX设计的Topic管理增强服务，提供直观的Web界面来管理和监控MQTT Topic"
+baseurl: "/EMQX-TopicX" # the subpath of your site, e.g. /blog
+url: "https://Estelle925.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - package.json
+  - package-lock.json
+
+# Include files
+include:
+  - _pages
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# SEO settings
+author:
+  name: "EMQX-TopicX Team"
+  email: "your-email@example.com"
+
+social:
+  name: "EMQX-TopicX"
+  links:
+    - "https://github.com/Estelle925/EMQX-TopicX"
+
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXX-X
+
+# Theme settings
+theme: minima
+
+# Custom variables
+version: "1.0.0"
+release_date: "2025-01-28"
+repository: "Estelle925/EMQX-TopicX"
+
+# Navigation
+navigation:
+  - title: "首页"
+    url: "/"
+  - title: "功能特性"
+    url: "/#features"
+  - title: "技术架构"
+    url: "/#architecture"
+  - title: "快速开始"
+    url: "/#quickstart"
+  - title: "GitHub"
+    url: "https://github.com/Estelle925/EMQX-TopicX"
+    external: true
